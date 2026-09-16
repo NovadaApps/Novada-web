@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novada — Contacto / Contact</title>
+<meta name="description" content="Fala connosco sobre a aplicação Novada. / Get in touch with the Novada team.">
+<meta name="theme-color" content="#111214">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23D71920'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='20' font-weight='700' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><span class="logo-badge">N</span>Novada</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="/#features" data-i18n="nav.features">Funcionalidades</a>
+      <a href="/#how" data-i18n="nav.how">Como funciona</a>
+      <a href="/#download" data-i18n="nav.download">Descarregar</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
+        <button data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="nav-menu-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <h1 data-i18n="page.title">Contacto</h1>
+      <p class="updated" data-i18n="page.sub">Tens uma dúvida, sugestão ou encontraste um erro? Fala connosco.</p>
+    </div>
+  </div>
+
+  <section style="padding:48px 0 80px">
+    <div class="wrap form-grid">
+
+      <!-- Form -->
+      <div>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+        <form id="contactForm" novalidate>
+          <div class="field" id="f-name">
+            <label for="name" data-i18n="form.name">Nome</label>
+            <input type="text" id="name" name="name" autocomplete="name" required
+                   data-i18n-ph="form.namePh" placeholder="O teu nome">
+            <div class="err" data-i18n="form.errName">Indica o teu nome.</div>
+          </div>
+
+          <div class="field" id="f-email">
+            <label for="email" data-i18n="form.email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required
+                   data-i18n-ph="form.emailPh" placeholder="nome@exemplo.com">
+            <div class="err" data-i18n="form.errEmail">Indica um endereço de e-mail válido.</div>
+          </div>
+
+          <div class="field" id="f-subject">
+            <label for="subject" data-i18n="form.subject">Assunto</label>
+            <select id="subject" name="subject">
+              <option value="general" data-i18n="form.s1">Questão geral</option>
+              <option value="support" data-i18n="form.s2">Apoio / problema na aplicação</option>
+              <option value="bug" data-i18n="form.s3">Reportar um erro</option>
+              <option value="privacy" data-i18n="form.s4">Privacidade e dados pessoais</option>
+              <option value="business" data-i18n="form.s5">Parcerias e imprensa</option>
+            </select>
+          </div>
+
+          <div class="field" id="f-message">
+            <label for="message" data-i18n="form.message">Mensagem</label>
+            <textarea id="message" name="message" required
+                      data-i18n-ph="form.messagePh" placeholder="Escreve aqui a tua mensagem..."></textarea>
+            <div class="err" data-i18n="form.errMessage">Escreve a tua mensagem (mínimo 10 caracteres).</div>
+          </div>
+
+          <div class="check" id="f-consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent" data-i18n="form.consent">
+              Aceito que os meus dados sejam tratados para responder a este pedido, nos termos da
+              <a href="/privacy">Política de Privacidade</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submitBtn" data-i18n="form.submit">Enviar mensagem</button>
+          <p class="form-note" data-i18n="form.note">Respondemos normalmente em 2 a 3 dias úteis.</p>
+        </form>
+      </div>
+
+      <!-- Side info -->
+      <aside>
+        <div class="info-card">
+          <h3 data-i18n="info.title">Dados da empresa</h3>
+          <div class="row">
+            <div class="k" data-i18n="info.company">Empresa</div>
+            <div class="v"><strong>BOVEDA CONSULTING, UNIPESSOAL, LDA</strong></div>
+          </div>
+          <div class="row">
+            <div class="k" data-i18n="info.address">Morada</div>
+            <div class="v">Rua Portugal Durão, n.º 16, 3.º Esq.<br>1600-186 Lisboa, Portugal</div>
+          </div>
+          <div class="row">
+            <div class="k" data-i18n="info.email">E-mail</div>
+            <div class="v"><a href="mailto:geral@novada.app">geral@novada.app</a></div>
+          </div>
+        </div>
+
+        <div class="info-card" style="margin-top:20px">
+          <h3 data-i18n="info.legalTitle">Documentos</h3>
+          <div class="row">
+            <div class="v"><a href="/privacy" data-i18n="foot.privacy">Política de Privacidade</a></div>
+          </div>
+          <div class="row">
+            <div class="v"><a href="/terms" data-i18n="foot.terms">Termos e Condições</a></div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/"><span class="logo-badge">N</span>Novada</a>
+        <p data-i18n="foot.tagline">O jogo de previsões de futebol. Sem apostas, sem dinheiro real — só futebol.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4 data-i18n="foot.product">Produto</h4>
+          <a href="/#features" data-i18n="nav.features2">Funcionalidades</a>
+          <a href="/#how" data-i18n="nav.how2">Como funciona</a>
+          <a href="/#download" data-i18n="nav.download2">Descarregar</a>
+          <a href="https://apps.apple.com/app/id6800308365" target="_blank" rel="noopener">App Store ↗</a>
+        </div>
+        <div class="foot-col">
+          <h4 data-i18n="foot.legal">Legal</h4>
+          <a href="/privacy" data-i18n="foot.privacy">Política de Privacidade</a>
+          <a href="/terms" data-i18n="foot.terms">Termos e Condições</a>
+          <a href="/contact" data-i18n="foot.contact">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="company">
+      <span class="name">BOVEDA CONSULTING, UNIPESSOAL, LDA</span><br>
+      Rua Portugal Durão, n.º 16, 3.º Esq., 1600-186 Lisboa, Portugal<br>
+      <span data-i18n="foot.copy">© 2026 BOVEDA CONSULTING, UNIPESSOAL, LDA. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.I18N = {
+  pt:{
+    "nav.features":"Funcionalidades","nav.how":"Como funciona","nav.download":"Descarregar",
+    "nav.features2":"Funcionalidades","nav.how2":"Como funciona","nav.download2":"Descarregar",
+    "page.title":"Contacto","page.sub":"Tens uma dúvida, sugestão ou encontraste um erro? Fala connosco.",
+    "form.name":"Nome","form.namePh":"O teu nome","form.errName":"Indica o teu nome.",
+    "form.email":"E-mail","form.emailPh":"nome@exemplo.com","form.errEmail":"Indica um endereço de e-mail válido.",
+    "form.subject":"Assunto",
+    "form.s1":"Questão geral","form.s2":"Apoio / problema na aplicação","form.s3":"Reportar um erro",
+    "form.s4":"Privacidade e dados pessoais","form.s5":"Parcerias e imprensa",
+    "form.message":"Mensagem","form.messagePh":"Escreve aqui a tua mensagem...",
+    "form.errMessage":"Escreve a tua mensagem (mínimo 10 caracteres).",
+    "form.consent":'Aceito que os meus dados sejam tratados para responder a este pedido, nos termos da <a href="/privacy">Política de Privacidade</a>.',
+    "form.errConsent":"É necessário aceitar a Política de Privacidade.",
+    "form.submit":"Enviar mensagem","form.sending":"A enviar...",
+    "form.note":"Respondemos normalmente em 2 a 3 dias úteis.",
+    "form.okSent":"<strong>Mensagem enviada.</strong> Obrigado pelo contacto — respondemos assim que possível.",
+    "form.notWired":'<strong>O formulário ainda não está ativo.</strong> Estamos a preparar o lançamento. Entretanto, escreve-nos diretamente para <a href="mailto:geral@novada.app" style="color:inherit;text-decoration:underline">geral@novada.app</a>.',
+    "form.failed":'<strong>Não foi possível enviar.</strong> Tenta novamente ou escreve para <a href="mailto:geral@novada.app" style="color:inherit;text-decoration:underline">geral@novada.app</a>.',
+    "info.title":"Dados da empresa","info.company":"Empresa","info.address":"Morada","info.email":"E-mail",
+    "info.legalTitle":"Documentos",
+    "foot.tagline":"O jogo de previsões de futebol. Sem apostas, sem dinheiro real — só futebol.",
+    "foot.product":"Produto","foot.legal":"Legal","foot.privacy":"Política de Privacidade",
+    "foot.terms":"Termos e Condições","foot.contact":"Contacto",
+    "foot.copy":"© 2026 BOVEDA CONSULTING, UNIPESSOAL, LDA. Todos os direitos reservados."
+  },
+  en:{
+    "nav.features":"Features","nav.how":"How it works","nav.download":"Download",
+    "nav.features2":"Features","nav.how2":"How it works","nav.download2":"Download",
+    "page.title":"Contact","page.sub":"Got a question, a suggestion, or found a bug? Get in touch.",
+    "form.name":"Name","form.namePh":"Your name","form.errName":"Please enter your name.",
+    "form.email":"Email","form.emailPh":"name@example.com","form.errEmail":"Please enter a valid email address.",
+    "form.subject":"Subject",
+    "form.s1":"General question","form.s2":"Support / app problem","form.s3":"Report a bug",
+    "form.s4":"Privacy and personal data","form.s5":"Partnerships and press",
+    "form.message":"Message","form.messagePh":"Write your message here...",
+    "form.errMessage":"Please write your message (at least 10 characters).",
+    "form.consent":'I agree to my data being processed in order to answer this request, as described in the <a href="/privacy">Privacy Policy</a>.',
+    "form.errConsent":"You need to accept the Privacy Policy.",
+    "form.submit":"Send message","form.sending":"Sending...",
+    "form.note":"We usually reply within 2–3 working days.",
+    "form.okSent":"<strong>Message sent.</strong> Thanks for reaching out — we'll reply as soon as we can.",
+    "form.notWired":'<strong>The form is not active yet.</strong> We are still preparing for launch. In the meantime, email us directly at <a href="mailto:geral@novada.app" style="color:inherit;text-decoration:underline">geral@novada.app</a>.',
+    "form.failed":'<strong>Could not send.</strong> Please try again, or email <a href="mailto:geral@novada.app" style="color:inherit;text-decoration:underline">geral@novada.app</a>.',
+    "info.title":"Company details","info.company":"Company","info.address":"Address","info.email":"Email",
+    "info.legalTitle":"Documents",
+    "foot.tagline":"The football prediction game. No betting, no real money — just football.",
+    "foot.product":"Product","foot.legal":"Legal","foot.privacy":"Privacy Policy",
+    "foot.terms":"Terms and Conditions","foot.contact":"Contact",
+    "foot.copy":"© 2026 BOVEDA CONSULTING, UNIPESSOAL, LDA. All rights reserved."
+  }
+};
+</script>
+<script src="assets/site.js"></script>
+<script>
+/* ---------------------------------------------------------------------------
+   Contact form.
+
+   The form is fully functional client-side (validation, states, i18n) but is
+   NOT yet delivering messages anywhere: FORM_ENDPOINT is null.
+
+   While it is null we deliberately tell the visitor the form is not active and
+   point them at geral@novada.app, rather than showing a fake "sent" confirmation
+   for a message nobody receives.
+
+   To go live, set FORM_ENDPOINT to a URL that accepts a JSON POST — e.g. a
+   Formspree/Web3Forms endpoint, or the Novada backend. Nothing else changes.
+--------------------------------------------------------------------------- */
+const FORM_ENDPOINT = null;
+
+(function () {
+  const form = document.getElementById('contactForm');
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function t(key) {
+    const lang = document.documentElement.lang === 'en' ? 'en' : 'pt';
+    return (window.I18N[lang] && window.I18N[lang][key]) || '';
+  }
+
+  // Placeholders are not covered by the shared [data-i18n] engine, so apply them
+  // whenever the language changes.
+  const baseSetLang = window.setLang;
+  window.setLang = function (lang) {
+    baseSetLang(lang);
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+      const val = t(el.getAttribute('data-i18n-ph'));
+      if (val) el.placeholder = val;
+    });
+    // Re-render any visible status message in the new language.
+    if (statusEl.dataset.key) statusEl.innerHTML = t(statusEl.dataset.key);
+  };
+  document.addEventListener('DOMContentLoaded', function () {
+    window.setLang(document.documentElement.lang === 'en' ? 'en' : 'pt');
+  });
+
+  function setInvalid(fieldId, invalid) {
+    document.getElementById(fieldId).classList.toggle('invalid', invalid);
+  }
+
+  function showStatus(key) {
+    statusEl.dataset.key = key;
+    statusEl.innerHTML = t(key);
+    statusEl.className = 'form-status ok';
+    statusEl.scrollIntoView({ block: 'center' });
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    const consent = form.consent.checked;
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    setInvalid('f-name', !name);
+    setInvalid('f-email', !emailOk);
+    setInvalid('f-message', message.length < 10);
+    if (!name || !emailOk || message.length < 10) return;
+    if (!consent) { alert(t('form.errConsent')); return; }
+
+    if (!FORM_ENDPOINT) {
+      showStatus('form.notWired');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = t('form.sending');
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, subject: form.subject.value, message })
+      });
+      if (!res.ok) throw new Error('Request failed: ' + res.status);
+      showStatus('form.okSent');
+      form.reset();
+    } catch (err) {
+      showStatus('form.failed');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = t('form.submit');
+    }
+  });
+})();
+</script>
+</body>
+</html>

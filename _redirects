@@ -1,0 +1,10 @@
+# Netlify redirects.
+# The www → apex redirect is handled by Netlify's domain settings once novada.app
+# is set as the primary domain, so it is deliberately not duplicated here.
+
+# Friendly URLs without the .html suffix.
+/privacy    /privacy.html   200
+/terms      /terms.html     200
+/contact    /contact.html   200
+/content    /content.html   200
+

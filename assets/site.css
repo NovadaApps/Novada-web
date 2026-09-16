@@ -1,0 +1,156 @@
+/* Novada — shared site styles.
+   Design tokens mirror the app's theme (spec §19) — keep these in sync with
+   composeApp/src/commonMain/kotlin/com/novada/app/theme/Color.kt */
+:root{
+  --primary:#D71920; --primary-dark:#A90F16;
+  --bg:#111214; --surface:#1B1D21; --surface-2:#212429;
+  --text:#FFFFFF; --text-2:#A8ABB2; --border:#2C2F35;
+  --success:#2DBE74; --warning:#F4B740; --error:#E5484D;
+  --maxw:1120px;
+  --font:'Archivo',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --display:'Archivo Expanded','Archivo',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font); background:var(--bg); color:var(--text);
+  line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.display{font-family:var(--display);letter-spacing:-.02em;line-height:1.05}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:50;background:rgba(17,18,20,.82);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:20px}
+.logo-badge{width:30px;height:30px;border-radius:8px;background:var(--primary);
+  display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:800;font-size:17px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{color:var(--text-2);font-size:15px;font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.lang{display:flex;border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.lang button{background:transparent;color:var(--text-2);border:0;padding:6px 11px;
+  font-family:var(--font);font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.lang button[aria-pressed="true"]{background:var(--primary);color:#fff}
+.nav-menu-toggle{display:none}
+
+/* Store badges */
+.store{display:inline-flex;align-items:center;gap:11px;background:var(--surface);
+  border:1px solid var(--border);border-radius:13px;padding:11px 18px;transition:.15s;position:relative}
+.store:hover{border-color:#3a3e45;transform:translateY(-1px)}
+.store svg{width:24px;height:24px;flex:0 0 auto;fill:var(--text)}
+.store .st{display:flex;flex-direction:column;line-height:1.15}
+.store .st small{font-size:11px;color:var(--text-2)}
+.store .st span{font-size:16px;font-weight:600;font-family:var(--display)}
+.store .soon{position:absolute;top:-9px;right:-9px;background:var(--primary);color:#fff;
+  font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;letter-spacing:.02em}
+
+/* Sections */
+section{padding:82px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 52px}
+.sec-head .eyebrow{color:var(--primary);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.sec-head h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,42px);margin:12px 0 14px;letter-spacing:-.02em}
+.sec-head p{color:var(--text-2);font-size:17px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:52px 0 40px;background:var(--bg)}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;margin-bottom:34px}
+.foot-brand{max-width:320px}
+.foot-brand .brand{margin-bottom:12px}
+.foot-brand p{color:var(--text-2);font-size:14px}
+.foot-links{display:flex;gap:56px;flex-wrap:wrap}
+.foot-col h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);margin-bottom:14px}
+.foot-col a{display:block;color:var(--text);font-size:15px;margin-bottom:10px;transition:.15s}
+.foot-col a:hover{color:var(--primary)}
+.company{border-top:1px solid var(--border);padding-top:26px;color:var(--text-2);font-size:13.5px;line-height:1.7}
+.company .name{color:var(--text);font-weight:600}
+
+/* ---------- Legal / content pages ---------- */
+.page-head{padding:56px 0 8px;border-bottom:1px solid var(--border)}
+.page-head h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,5vw,46px);letter-spacing:-.02em}
+.page-head .updated{color:var(--text-2);font-size:14px;margin:12px 0 28px}
+.legal{padding:40px 0 80px;max-width:780px}
+.legal h2{font-family:var(--display);font-weight:700;font-size:22px;margin:38px 0 12px;letter-spacing:-.01em}
+.legal h3{font-size:17px;font-weight:600;margin:24px 0 8px}
+.legal p{color:var(--text-2);font-size:16px;margin-bottom:14px}
+.legal ul{color:var(--text-2);font-size:16px;margin:0 0 16px 20px}
+.legal li{margin-bottom:8px}
+.legal strong{color:var(--text);font-weight:600}
+.legal a{color:var(--primary);text-decoration:underline;text-underline-offset:3px}
+.legal .box{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin:22px 0}
+.legal .box p:last-child{margin-bottom:0}
+.legal .box.warn{border-color:var(--warning);background:rgba(244,183,64,.07)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-bottom:32px}
+.toc h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);margin-bottom:12px}
+.toc ol{margin-left:18px;color:var(--text-2);font-size:15px}
+.toc li{margin-bottom:6px}
+.toc a{color:var(--text-2);text-decoration:none}
+.toc a:hover{color:var(--primary)}
+
+/* Language blocks for long-form pages: only the active language is shown */
+[data-lang-block]{display:none}
+[data-lang-block].active{display:block}
+
+/* ---------- Forms ---------- */
+.form-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
+.field input,.field textarea,.field select{
+  width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  color:var(--text);font-family:var(--font);font-size:15px;padding:13px 15px;transition:border-color .15s;
+}
+.field textarea{min-height:150px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--primary)}
+.field input::placeholder,.field textarea::placeholder{color:#6b6f77}
+.field .err{color:var(--error);font-size:13px;margin-top:6px;display:none}
+.field.invalid input,.field.invalid textarea{border-color:var(--error)}
+.field.invalid .err{display:block}
+.check{display:flex;gap:11px;align-items:flex-start;margin-bottom:20px}
+.check input{width:18px;height:18px;flex:0 0 auto;margin-top:2px;accent-color:var(--primary)}
+.check label{font-size:14px;color:var(--text-2);line-height:1.5}
+.check a{color:var(--primary);text-decoration:underline;text-underline-offset:3px}
+.btn-primary{
+  background:var(--primary);color:#fff;border:0;border-radius:13px;padding:15px 26px;
+  font-family:var(--font);font-size:16px;font-weight:600;cursor:pointer;transition:.15s;width:100%;
+}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-primary:disabled{background:var(--border);color:var(--text-2);cursor:not-allowed}
+.form-note{color:var(--text-2);font-size:13px;margin-top:14px;text-align:center}
+.form-status{border-radius:13px;padding:16px 18px;margin-bottom:20px;font-size:15px;display:none}
+.form-status.ok{display:block;background:rgba(45,190,116,.1);border:1px solid var(--success);color:var(--success)}
+.info-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px}
+.info-card h3{font-family:var(--display);font-size:18px;font-weight:700;margin-bottom:14px}
+.info-card .row{margin-bottom:16px}
+.info-card .row:last-child{margin-bottom:0}
+.info-card .k{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);margin-bottom:4px}
+.info-card .v{font-size:15px;line-height:1.6}
+.info-card a{color:var(--primary)}
+
+/* Responsive */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-links.mobile-open{display:flex;position:absolute;top:64px;left:0;right:0;
+    flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--border);padding:8px 0}
+  .nav-links.mobile-open a{padding:14px 24px;width:100%}
+  .nav-menu-toggle{display:grid;place-items:center;background:transparent;border:1px solid var(--border);
+    border-radius:9px;width:38px;height:38px;cursor:pointer}
+  .nav-menu-toggle svg{width:20px;height:20px;stroke:var(--text)}
+  .form-grid{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:560px){
+  section{padding:60px 0}
+  .foot-top{flex-direction:column}
+}
+
+/* Live store badge — used once the app is actually published in that store.
+   The "coming soon" variant keeps the neutral surface look above. */
+.store.live{background:var(--primary);border-color:var(--primary)}
+.store.live:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+.store.live svg{fill:#fff}
+.store.live .st small{color:rgba(255,255,255,.8)}
+.store.live .st span{color:#fff}

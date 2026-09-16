@@ -1,3 +1,2 @@
-[[edge_functions]]
-function = "cloak"
-path = "/*"
+[build]
+publish = "."

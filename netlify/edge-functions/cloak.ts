@@ -125,4 +125,5 @@ export default async (request: Request, context: Context) => {
 
 export const config: Config = {
   path: "/*",
+  excludedPath: ["/*.css", "/*.js", "/*.png", "/*.woff2", "/*.svg", "/*.ico", "/*.json", "/*.xml", "/*.txt"]
 };
